@@ -1,0 +1,47 @@
+/* Selectors
+
+There are so many selectors in css but here are five most common used in css.
+
+1. Element Selector
+2.id selector
+3.class selector
+4.universal selector
+5. group selector
+
+
+
+*/
+
+/* p{
+    font-size: 30px;
+    color: red;
+    background-color: blue;
+}
+#para3{
+    background-color: aqua;
+}
+.para5{
+    background-color: chartreuse;
+} */
+
+p{
+     color: blue; 
+    background-color:  yellow;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-style: italic;
+    text-transform: capitalize;
+    text-decoration: underline;
+    text-decoration-color: rgb(0, 94, 42);
+    text-decoration-style: double;
+} 
+
+li{
+    list-style: none;
+    text-decoration: none;
+}
+li a{
+   text-decoration: none;
+   color: black; 
+}
