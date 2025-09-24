@@ -1,0 +1,38 @@
+/* .btn{
+    width: 120px;
+    padding: 10px;
+    background-color: aquamarine;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+} */
+*{
+    box-sizing: border-box;
+}
+ /* .box{
+    width: auto;
+    height: auto;
+    background-color: aqua;
+    padding: 0px 50px 0px 50px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px; 
+    border-bottom: 10px solid black;
+    border-top: 10px solid black;
+}  */
+
+.box{
+    width: 280px;
+    height: 350px;
+    background-color: aqua;
+    border-radius: 20px;
+    text-align: center;
+    padding-top: 10px;
+}
+.box .firstInput{
+    width: 210px;
+    padding: 7px;
+    border: none;
+    border-radius: 10px;
+}

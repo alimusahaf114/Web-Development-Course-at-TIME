@@ -1,92 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    input{
+        width: 100%;
+        font-size: 40px;
+        padding: 10px;
+        background-color: black;
+        color: white;
+        border: none;
+        outline: none;
+        margin-bottom: 10px;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #dfe6e9;
+    }
+
+    .calculator {
+      width: 300px;
+      background: #111;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.5);
+    }
+
+    .display {
+      height: 60px;
+      background: transparent;
+      color: white;
+      font-size: 2rem;
+      text-align: right;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #333;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    button {
+      height: 60px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #333;
+      color: white;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    .btn-orange {
+      background: orange;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .btn-zero {
+      grid-column: span 2;
+    }
+
+    .btn-equal {
+      grid-row: span 2;
+      background: orange;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 0.8rem;
+      color: white;
+    }
+
+    .footer a {
+      color: orange;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-    <div id="calculator">
-        <input type="text" id="display" readonly>
-        <div class="buttons">
-            <button class="button" onclick="
-                displayValue = '';
-                document.querySelector('#display').value = displayValue;
-                ">C</button>
-            <button class="button" onclick="
-                displayValue = displayValue + 1;
-                document.querySelector('#display').value = displayValue;
-                ">1</button>
-            <button class="button"
-                onclick="
-                displayValue = displayValue + 2;
-                document.querySelector('#display').value = displayValue;
-                "
-            >2</button>
-            <button class="button"
-            onclick="
-                displayValue = displayValue + '+';
-                document.querySelector('#display').value = displayValue;
-                "
-            >+</button>
-            <button class="button" onclick="
-                displayValue = displayValue + 3;
-                document.querySelector('#display').value = displayValue;
-                ">3</button>
-            <button class="button" onclick="
-                displayValue = displayValue + 4;
-                document.querySelector('#display').value = displayValue;
-                ">4</button>
-            <button class="button" onclick="
-                displayValue = displayValue + '-';
-                document.querySelector('#display').value = displayValue;
-                ">-</button>
-            <button class="button" onclick="
-                displayValue = displayValue + 5;
-                document.querySelector('#display').value = displayValue;
-                ">5</button>
-            <button class="button" onclick="
-                displayValue = displayValue + 6;
-                document.querySelector('#display').value = displayValue;
-                ">6</button>
-            <button class="button" onclick="
-                displayValue = displayValue + '*';
-                document.querySelector('#display').value = displayValue;
-                ">*</button>
-            <button class="button" onclick="
-                displayValue = displayValue + 7;
-                document.querySelector('#display').value = displayValue;
-                ">7</button>
-            <button class="button" onclick="
-                displayValue = displayValue + 8;
-                document.querySelector('#display').value = displayValue;
-                ">8</button>
-            <button class="button" onclick="
-                displayValue = displayValue + '/';
-                document.querySelector('#display').value = displayValue;
-                ">/</button>
-            <button class="button" onclick="
-                displayValue = eval(displayValue);
-                document.querySelector('#display').value = displayValue;
-                ">=</button>   
-            <button class="button" onclick="
-                displayValue = displayValue + 9;
-                document.querySelector('#display').value = displayValue;
-                ">9</button>   
-            <button class="button" onclick="
-                displayValue = displayValue + 0;
-                document.querySelector('#display').value = displayValue;
-                ">0</button>   
-            <button class="button" onclick="
-                displayValue = displayValue + '.';
-                document.querySelector('#display').value = displayValue;
-                ">.</button>   
-        </div>
+
+  <div class="calculator">
+    <input type="text" class="input" readonly>
+
+    <div class="buttons">
+      <button class="btn-orange" onclick="
+        displayValue = ''
+        document.querySelector('.input').value = displayValue
+        " >AC</button>
+      <button class="btn-orange" onclick="
+        displayValue += '/'
+        document.querySelector('.input').value = displayValue
+        ">/</button>
+      <button class="btn-orange" onclick="
+        displayValue += '*'
+        document.querySelector('.input').value = displayValue
+        ">*</button>
+
+      <button onclick="
+        displayValue += 7;
+        document.querySelector('.input').value = displayValue
+        " id="btn">7</button>
+      <button onclick="
+        displayValue += 8
+        document.querySelector('.input').value = displayValue
+        ">8</button>
+      <button onclick="
+        displayValue += 9
+        document.querySelector('.input').value = displayValue
+        ">9</button>
+      <button class="btn-orange" onclick="
+        displayValue += '-'
+        document.querySelector('.input').value = displayValue
+        ">-</button>
+
+      <button onclick="
+        displayValue += 6
+        document.querySelector('.input').value = displayValue
+        ">6</button>
+      <button onclick="
+        displayValue += 5
+        document.querySelector('.input').value = displayValue
+        ">5</button>
+      <button onclick="
+        displayValue += 4
+        document.querySelector('.input').value = displayValue
+        ">4</button>
+      <button class="btn-orange" onclick="
+        displayValue += '+'
+        document.querySelector('.input').value = displayValue
+        ">+</button>
+
+      <button onclick="
+        displayValue += 1
+        document.querySelector('.input').value = displayValue
+        ">1</button>
+      <button onclick="
+        displayValue += 2
+        document.querySelector('.input').value = displayValue
+        ">2</button>
+      <button onclick="
+        displayValue += 3
+        document.querySelector('.input').value = displayValue
+        ">3</button>
+      <button class="btn-equal" onclick="
+         
+        document.querySelector('.input').value = eval(displayValue)
+        ">=</button>
+
+      <button class="btn-zero" onclick="
+        displayValue += 0
+        document.querySelector('.input').value = displayValue
+        ">0</button>
+      <button onclick="
+        displayValue += '.'
+        document.querySelector('.input').value = displayValue
+        ">.</button>
     </div>
 
-    <script>
-        let displayValue = "";
-    </script>
+    <div class="footer">
+      Developed by <a href="#">ACE CODER</a>
+    </div>
+  </div>
+
+  <script>
+    let displayValue = ''
+     
+    // // Template Literal 
+    // let name = "Faraz"
+    // console.log(`My name is ${name}`);
+    
+  </script>
+
 </body>
 </html>
