@@ -3,150 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Objects</title>
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 12px;
+            height: 100vh;
+        }
+        button{
+            width: 90px;
+            padding: 12px;
+            background-color: aqua;
+            margin-left: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
 </head>
-<style>
-    body{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        flex-direction: column;
-        font-family: sans-serif;
-    }
-    button{
-        padding: 20px;
-        font-size: 17px;
-        width: 100px;
-        background-color: aqua;
-        margin-left: 20px;
-        border: none;
-        cursor: pointer;
-        font-weight: bold;
-    }
-    button:active{
-        background-color: rgb(6, 215, 215);
-    }
-</style>
 <body>
-    <div class="result">
-    <h1 id="result"></h1>
-    <h1 id="win"></h1>
-    <h1 id="lost"></h1>
-    <h1 id="tie"></h1>
-    </div>
-    <div class="button">
-        <button onclick="selectBat()">Bat</button>
-    <button onclick="selectBall()">Ball</button>
-    <button onclick="selectStump()">Stump</button>
-    </div>
-    
+        <h1 id="score"></h1>
+        <h1 id="score1"></h1>
+        <h1 id="score2"></h1>
 
-    
-    
+        <button onclick="win()">WIN</button>
+        <button onclick="loss()">LOSS</button>
+        <button onclick="tie()">TIE</button>
+
 
     <script>
-
         let score = {
-            Win: 0,
-            Lost: 0 ,
-            Tie: 0            
+            win: 0,
+            loss:0,
+            tie:0
         }
 
-        let computer; 
-        let finalResult;
-        
-        function compChoice()  {
-            let random = Math.floor(Math.random() * 3)
-            if(random == 0){
-                return  "Ball"
-            } else if(random == 1){
-                return "Bat" 
-            } else {
-                return "Stump" 
-            }
-        }     
-
-        function selectBat(){
-            computer = compChoice()
-            console.log(computer);            
-            if(computer == "Bat"){
-                score.Tie++
-                finalResult = "its tie "
-                
-            } else if (computer == "Ball"){
-                score.Win++
-                finalResult = "User Won "
-            } else{
-                score.Lost++
-                finalResult = "Computer Won"
-            }
-            showResult(finalResult)
-        }
-
-        function selectBall(){
-            computer = compChoice()
-            console.log(computer);            
-            if(computer == "Bat"){
-                score.Lost++
-                finalResult = "Computer Won"
-            } else if (computer == "Ball"){
-                score.Tie++
-                finalResult = "tie"
-            } else{
-                score.Win++
-                finalResult = "User Won"
-            }
+    // let student = {
+    //     name: "Ali" , 
+    //     age: 21 ,
+    //     quali: "graduate" ,
+    //     job: "teacher"
+    // }
+    // let car = {
+    //     brand: "Honda" ,
+    //     model: "civic" ,
+    //     year: "2025" ,
+    //     work: function speed(){
+    //         console.log("It runs very fast...");
             
-            showResult(finalResult)
-        }
-        function selectStump(){
-            computer = compChoice()
-            console.log(computer);            
-            if(computer == "Bat"){
-                score.Win++
-                finalResult = "Computer Won"
-            } else if (computer == "Ball"){
-                score.Lost++
-                finalResult = "Computer Won"
-            } else{
-                score.Tie++
-                finalResult = "tie"
-            }
-            showResult(finalResult)
-        }
+    //     }
+    // }
+    // console.log(student["age"]);
+    // console.log(car.brand);
+    
+    
+    // let name = "Ali"
+    // let age = 21 ;
+    // let quali = "Graduate";
+    // let job = "teacher"
 
-        function showResult(finalResult){
-        document.getElementById("result").innerText = `Result :  ${finalResult} `
-        document.getElementById("win").innerText = `your winning socre :  ${score.Win} 🏆`
-        document.getElementById("lost").innerText = `your Lossing socre : ${score.Lost} ☹️`
-        document.getElementById("tie").innerText   = `your Tie socre :  ${score.Tie} ⏯️`
-        // alert(`RESULT: ${finalResult}
-        // Score of Win: ${score.Win}
-        // Score of Lost: ${score.Lost}
-        // Score of Tie: ${score.Tie}
-        
-        // `)
-        }
+    // console.log(`My name is ${student.name} and I am ${student.age} years old .. `)
 
-       
-        
-        
-        // console.log(compChoice());
-        
-        // let car = {
-        //     brand: "Honda" ,
-        //     model: "Civic" ,
-        //     year: "2025" ,
-        //     color: "grey"
-        // }
+    function win(){
+        document.getElementById("score").innerText = ` Winning Score is ${score.win++}`
 
-        // car.model = "mehran"
-        // delete car.model
-       
-        // console.log(car["brand"]);
+    }
+    function loss(){
+        document.getElementById("score1").innerText = ` Loss Score is ${score.loss++}`
         
+    }
+    function tie(){
+        document.getElementById("score2").innerText = ` Tie Score is ${score.tie++}`
         
+    }
+
+
+
+
+
+
+
+
+
     </script>
 </body>
 </html>
