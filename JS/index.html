@@ -1,0 +1,90 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Text Editor</title>
+</head>
+<body>
+
+  <h2>📝 Simple Text Editor</h2>
+
+  <button onclick="makeBold()">Bold</button>
+  <button onclick="makeItalic()">Italic</button>
+  <button onclick="makeUnderline()">Underline</button>
+
+  <br><br>
+
+  <textarea id="textInput" rows="5" cols="40" placeholder="Type your text here..." onkeyup="updateText()"></textarea>
+
+  <br><br>
+
+  <p id="outputText">Your styled text will appear here...</p>
+
+  <script>
+    function updateText() {
+      document.getElementById("outputText").textContent =
+        document.getElementById("textInput").value;
+    }
+
+    function makeBold() {
+      let text = document.getElementById("outputText");
+      text.style.fontWeight =
+        text.style.fontWeight === "bold" ? "normal" : "bold";
+    }
+
+    function makeItalic() {
+      let text = document.getElementById("outputText");
+      text.style.fontStyle =
+        text.style.fontStyle === "italic" ? "normal" : "italic";
+    }
+
+    function makeUnderline() {
+      let text = document.getElementById("outputText");
+      text.style.textDecoration =
+        text.style.textDecoration === "underline" ? "none" : "underline";
+    }
+  </script>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Text Editor</title>
+</head>
+<body>
+
+  <h2 contenteditable="true">📝 Simple Text Editor</h2>
+
+  <!-- Toolbar -->
+  <button    onclick="makeBold()">Bold</button>
+  <button    onclick="makeItalic()">Italic</button>
+  <button    onclick="makeUnderline()">Underline</button>
+
+  <br><br>
+
+  <!-- Editable area -->
+  <p id="editor" contenteditable="true" 
+       style="width:400px; height:150px; border:1px solid #000; padding:10px;">
+    Type your text here...
+</p>
+
+  <script>
+    function makeBold() {
+      document.execCommand("bold");  // makes selected text bold
+    }
+
+    function makeItalic() {
+      document.execCommand("italic");  // makes selected text italic
+    }
+
+    function makeUnderline() {
+      document.execCommand("underline");  // makes selected text underlined
+    }
+  </script>
+
+</body>
+</html>

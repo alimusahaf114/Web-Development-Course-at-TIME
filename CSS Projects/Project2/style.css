@@ -1,0 +1,29 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.card{
+    width: 40%;
+    height: auto;
+    background-color: rgb(249, 218, 171);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+}
+.card p{
+    font-size: 19px;
+    font-family: sans-serif;
+}
+.card p a{
+    text-decoration: none;
+    color: black;
+}
+#facebook{
+    color: blue;
+    font-size: 30px;
+}
